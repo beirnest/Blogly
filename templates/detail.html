@@ -4,9 +4,21 @@
 
 {% block content %}
 <img src='{{ user.image }}'>
+<div>
 <h1>{{ user.first_name }} {{user.last_name}}</h1>
 <form>
     <button formaction="/users/{{ user.id }}/edit">Edit</button>
     <button formaction="/users/{{ user.id }}/delete" formmethod="POST">Delete</button>
 </form>
+
+<ul class="posts">
+    <h2>Posts</h2>
+    {% for post in posts %}
+    <li><a href="/posts/{{ post.id }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
+<form action ="/users/{{ user.id }}/posts/new">
+    <button>Add Post</button>
+</form>
+</div>
 {% endblock %}
