@@ -1,6 +1,6 @@
 # Blogly #
 
-Python, PostgreSQL, and SQLAlchemy App
+## Python, PostgreSQL, and SQLAlchemy App ##
 
 Database/app allows users to be created, edited, or deleted.
 
