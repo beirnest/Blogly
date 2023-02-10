@@ -7,6 +7,10 @@
 <form method="POST" action="/users/{{ user.id }}/posts/new">
     <p>Title: <input name="title" placeholder="Enter a title"></p>
     <p>Post Content: <textarea name="content" placeholder="Enter the content" rows="4" cols="50"></textarea></p>
+    {% for tag in tags %}
+    <input type="checkbox" name="tag" value="{{ tag.id }}">
+    <label for="tag">{{ tag.name }}</label><br>
+    {% endfor %}
     <button>Add</button>
 </form>
 {% endblock %}

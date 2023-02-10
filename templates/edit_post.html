@@ -7,6 +7,10 @@
 <form>
     <p>Title: <input name="title" value="{{ post.title }}"></p>
     <p>Post Content: <textarea name="content" rows="4" cols="50">{{ post.content }}</textarea></p>
+    {% for tag in all_tags %}
+        <input type="checkbox" name="tag" value="{{ tag.id }}" {% for post_tag in tags %}{% if post_tag.id == tag.id %}checked{% endif %}{% endfor %}>
+        <label for="tag">{{ tag.name }}</label><br>
+    {% endfor %}
     <button formaction="/posts/{{ post.id }}/edit" formmethod="POST">Save</button>
     <button formaction="/users/{{ post.user.id }}">Cancel</button>
 </form>
